@@ -34,8 +34,7 @@ client.on("messageCreate", async (message) => {
     let userMessage = message.content.replace(`<@${client.user.id}>`, "").trim();
     
     if (!userMessage) {
-      await message.reply("👋 Hey! I'm powered by **Google Gemini 2.5 Lite**. What's up?");
-      return;
+      userMessage = "Hi!";
     }
 
     try {
@@ -79,7 +78,6 @@ client.on("messageCreate", async (message) => {
 
     } catch (error) {
       console.error("❌ Error:", error);
-      await message.reply("⚠️ Oops, something went wrong. Try again later!");
     }
   }
 });
