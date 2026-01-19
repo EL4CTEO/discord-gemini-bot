@@ -1,116 +1,94 @@
 # Discord Gemini Bot
 
-Bot Discord powered by **Google Gemini 2.5 Lite** - Conversazioni intelligenti gratuite!
+A chill Discord bot powered by Google Gemini 2.5 Lite. Free AI chats, no BS.
 
-## 🚀 Caratteristiche
+## What's cool about it
 
-- ✨ Powered by Google Gemini 2.5 Lite (GRATIS)
-- 💬 Memoria conversazionale per ogni canale
-- 🔄 Supporto menzioni e DM
-- 📝 Gestione messaggi lunghi automatica
-- ⚡ Risposte rapide e intelligenti
+- 🤖 Uses Google Gemini 2.5 Flash-Lite (totally FREE)
+- 💾 Remembers your convo (last 20 messages per channel)
+- 💬 Works with mentions & DMs
+- ✂️ Auto-splits long messages
+- ⚡ Fast responses with typing indicators
+- 📊 1000 requests/day free tier (15 RPM)
 
-## 📋 Prerequisiti
+## Setup
 
-- Node.js (v16 o superiore)
-- Account Discord
-- Google Gemini API Key (gratuita)
+**Requirements:**
+- Node.js v16+
+- Discord account
+- Google Gemini API key (free)
 
-## 🛠️ Installazione
-
-1. **Clona il repository**
+**Install:**
 ```bash
 git clone https://github.com/EL4CTEO/discord-gemini-bot.git
 cd discord-gemini-bot
-```
-
-2. **Installa le dipendenze**
-```bash
 npm install
-```
-
-3. **Configura le variabili d'ambiente**
-```bash
 cp .env.example .env
 ```
 
-Modifica il file `.env` con le tue credenziali:
-- `DISCORD_TOKEN`: Token del bot Discord
-- `GEMINI_API_KEY`: API Key di Google Gemini
+Edit `.env` with your tokens:
+```
+DISCORD_TOKEN=your_discord_bot_token
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-## 🔑 Ottieni le credenziali
+## Getting your tokens
 
-### Discord Bot Token
+**Discord Bot:**
+1. Go to [Discord Dev Portal](https://discord.com/developers/applications)
+2. New Application → Bot → Add Bot
+3. Copy token
+4. Enable "MESSAGE CONTENT INTENT" 
+5. Invite: `https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=274877908032&scope=bot`
 
-1. Vai su [Discord Developer Portal](https://discord.com/developers/applications)
-2. Crea una nuova applicazione
-3. Vai su "Bot" → "Add Bot"
-4. Copia il Token
-5. Abilita "MESSAGE CONTENT INTENT" in "Privileged Gateway Intents"
-6. Invita il bot: `https://discord.com/api/oauth2/authorize?client_id=TUO_CLIENT_ID&permissions=2048&scope=bot`
+**Gemini API (FREE):**
+1. [Get API Key](https://aistudio.google.com/app/apikey)
+2. Click "Create API Key"
+3. Copy it
+4. Free tier: **1000 requests/day, 15/min**
 
-### Google Gemini API Key (GRATUITA)
-
-1. Vai su [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Clicca "Create API Key"
-3. Copia la chiave
-4. **Limite gratuito**: 60 richieste/minuto
-
-## ▶️ Avvio
+## Run it
 
 ```bash
 npm start
 ```
 
-## 💬 Utilizzo
+## How to use
 
-- **Menziona il bot**: `@NomeBot ciao come stai?`
-- **Solo ping**: `@NomeBot` → Riceverai un messaggio di benvenuto
-- **DM**: Scrivi direttamente al bot in privato
+- Mention the bot: `@BotName what's good?`
+- Just ping: `@BotName` → gets a welcome msg
+- DM: message the bot directly
 
-## 🧠 Funzionalità
+## Features
 
-- **Memoria conversazionale**: Il bot ricorda gli ultimi 20 messaggi per canale
-- **Risposte lunghe**: Divide automaticamente messaggi oltre i 2000 caratteri
-- **Typing indicator**: Mostra quando il bot sta "scrivendo"
+- **Memory**: keeps last 20 messages per channel
+- **Long msgs**: auto-chunks over 2000 chars
+- **Typing**: shows "typing..." while thinking
 
-## 📁 Struttura
+## Troubleshooting
 
-```
-discord-gemini-bot/
-├── index.js           # Codice principale
-├── package.json       # Dipendenze
-├── .env.example       # Template variabili
-├── .env              # Le tue credenziali (non committare!)
-└── README.md         # Questa guida
-```
+**"Invalid token"** → Check your Discord token in `.env`
 
-## 🐛 Troubleshooting
+**"Missing Access"** → Enable MESSAGE CONTENT INTENT in dev portal
 
-**Errore: Invalid token**
-- Verifica che il token Discord sia corretto in `.env`
+**"Quota exceeded"** → Wait a bit or check [quota limits](https://ai.google.dev/gemini-api/docs/rate-limits)
 
-**Errore: Missing Access**
-- Abilita "MESSAGE CONTENT INTENT" nel Developer Portal
+## Why 2.5 Flash-Lite?
 
-**Errore API Gemini**
-- Verifica la validità dell'API Key
-- Controlla di non aver superato il rate limit (60/min)
+It's the best free model for Discord bots:
+- **1000 daily requests** (vs 100 for Pro models)
+- **15 requests/minute** (highest in free tier)
+- **Super fast**: 392 tokens/sec
+- **Cheap AF**: $0.10/M input, $0.40/M output if you go paid
 
-## 📝 Note
+## License
 
-- Google Gemini è **completamente gratuito** (fino a 60 req/min)
-- Ogni canale ha la propria conversazione indipendente
-- Il bot risponde solo quando menzionato o in DM
+MIT - do whatever you want with it
 
-## 📄 Licenza
+## Contributing
 
-MIT License - Sentiti libero di modificare e distribuire!
+PRs welcome! Found a bug? Open an issue.
 
-## 🤝 Contributi
+---
 
-Pull request benvenute! Per cambiamenti importanti, apri prima un issue.
-
-## ⭐ Supporto
-
-Se questo progetto ti è stato utile, lascia una stella! ⭐
+Made with ☕ and procrastination
