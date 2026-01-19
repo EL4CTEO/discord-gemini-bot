@@ -12,7 +12,7 @@ const client = new Client({
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ 
-  model: "gemini-2.0-flash-exp",
+  model: "gemini-2.5-flash-lite",
   generationConfig: {
     maxOutputTokens: 1900,
     temperature: 0.9,
@@ -23,8 +23,8 @@ const conversationHistory = new Map();
 
 client.on("ready", () => {
   console.log(`✅ Bot online: ${client.user.tag}`);
-  console.log(`📊 Server: ${client.guilds.cache.size}`);
-  client.user.setActivity("Google Gemini 2.5 Lite", { type: "PLAYING" });
+  console.log(`📊 Servers: ${client.guilds.cache.size}`);
+  client.user.setActivity("Powered by Gemini 2.5 Lite", { type: "PLAYING" });
 });
 
 client.on("messageCreate", async (message) => {
@@ -34,7 +34,7 @@ client.on("messageCreate", async (message) => {
     let userMessage = message.content.replace(`<@${client.user.id}>`, "").trim();
     
     if (!userMessage) {
-      await message.reply("👋 Ciao! Sono un bot powered by **Google Gemini 2.5 Lite**. Come posso aiutarti?");
+      await message.reply("👋 Hey! I'm powered by **Google Gemini 2.5 Lite**. What's up?");
       return;
     }
 
@@ -78,8 +78,8 @@ client.on("messageCreate", async (message) => {
       }
 
     } catch (error) {
-      console.error("❌ Errore:", error);
-      await message.reply("⚠️ Si è verificato un errore. Riprova più tardi.");
+      console.error("❌ Error:", error);
+      await message.reply("⚠️ Oops, something went wrong. Try again later!");
     }
   }
 });
