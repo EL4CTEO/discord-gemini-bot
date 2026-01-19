@@ -24,7 +24,6 @@ const conversationHistory = new Map();
 client.on("ready", () => {
   console.log(`✅ Bot online: ${client.user.tag}`);
   console.log(`📊 Servers: ${client.guilds.cache.size}`);
-  client.user.setActivity("Powered by Gemini 2.5 Lite", { type: "PLAYING" });
 });
 
 client.on("messageCreate", async (message) => {
@@ -34,7 +33,7 @@ client.on("messageCreate", async (message) => {
     let userMessage = message.content.replace(`<@${client.user.id}>`, "").trim();
     
     if (!userMessage) {
-      userMessage = "Hi!";
+      userMessage = "Hi";
     }
 
     try {
