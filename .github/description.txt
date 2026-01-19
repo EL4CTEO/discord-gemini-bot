@@ -1,0 +1,1 @@
+A chill Discord bot powered by Google Gemini 2.5 Flash-Lite. Free AI chats, 1000 req/day, no BS.
